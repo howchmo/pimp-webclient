@@ -30,7 +30,7 @@
 		R=
 		{
 			'*':[/\n\* /,'<div class="block-note-bullet">&bull;<div class="block-note-bullet-content">','</div></div>'],
-			// '1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
+// 			'1':[/\n[1-9]\d*\.? /,'<ol><li>','</li></ol>'],
 			' ':[/\n    /,'<pre><code>','</pre></code>',''],
 			'`':[/\n` /,'<div class="blockquoted">','</div>',''],
 			'>':[/\n> /,'<div class="indented">','</div>',''],

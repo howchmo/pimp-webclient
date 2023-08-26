@@ -287,7 +287,15 @@ function getLink( block )
 
 function getIcon( block )
 {
-	if( block.text[1] == " " )
+	if( block.text.startsWith("&#") )
+	{
+		s = block.text.split(" ");
+		block.icon = "<span class='bullet'>"+s[0]+"</span>";
+		block.text = "";
+		for( i = 1; i < s.length; i++ )
+			block.text += s[i]+" ";
+	}
+	else if( block.text[1] == " " )
 	{
 		var icon = icons[block.text[0]];
 		if( icon != null )
@@ -420,6 +428,8 @@ function deriveIcon( noteText  )
 	if( noteText.startsWith("[") )
 		index = 1;
 	var icon = icons[noteText[index]];
+	if(noteText.startsWith("&#"))
+		icon = "<span class='bullet'>"+noteText.split(" ")[0]+"</span>";
 	if( icon == undefined )
 		return "";
 	return icon;
