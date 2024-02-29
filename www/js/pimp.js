@@ -856,7 +856,7 @@ function upload( blob, extension )
 	uploadData.extension = extension;
 	$.ajax({
 	  type: 'POST',
-	  url: '/upload',
+	  url: '/pimp/upload',
 		data: JSON.stringify(uploadData),
 	  contentType: 'application/json', // set accordingly
 	  processData: false,
